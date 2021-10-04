@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 int main(){
     int N,count=0,temp;
