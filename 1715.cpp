@@ -3,21 +3,22 @@
 #include <queue>
 using namespace std;
 int main(){
-    int N,total=0,temp,temp1,temp2;
+    int N,temp,temp1,temp2;
+    long long total=0;
     priority_queue<int, vector<int>, greater<int>> arr;
     cin>>N;
     for(int i=0;i<N;++i){
         cin>>temp;
         arr.push(temp);
     }
-    for(int i=0;i<N-1;++i){
+    while(arr.size()!=1){
         temp1=arr.top();
         arr.pop();
         temp2=arr.top();
         arr.pop();
         total+=temp1+temp2;
-        arr.push(total);
+        arr.push(temp1+temp2);
     }
-cout<<total;
+cout<<total<<endl;
     return 0;
 }
