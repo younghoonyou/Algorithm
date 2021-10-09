@@ -10,7 +10,6 @@ int main(){
         total+=count;
         count++;
     }
-    // cout<<total-N+1<<endl;
     if(count%2){
         cout<<count-(total-N+1)<<"/"<<total-N+1;
     }
