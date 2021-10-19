@@ -2,7 +2,7 @@
 #include <vector>
 #include <cmath>
 using namespace std;
-int dist(int a,int b, int c,int d){
+float dist(int a,int b, int c,int d){
 return sqrt(pow(a-c,2)+pow(b-d,2));
 }
 int main(){
@@ -13,7 +13,7 @@ int main(){
     int n;
     for(int i=0;i<N;++i){
         cin >> start[0] >> start[1] >> end[0] >> end[1];
-        scanf("%d",&n);
+        cin>>n;
         int stone[n][3];
         for(int j=0;j<n;++j){
             cin >> first >> second >>radius;
@@ -28,13 +28,10 @@ int main(){
         else if((dist(start[0],start[1],stone[k][0],stone[k][1])>stone[k][2])&&(dist(end[0],end[1],stone[k][0],stone[k][1])<stone[k][2])){
             count[i]++;
         }
-        else{
-            continue;
-        }
     }
     }
     for(int i=0;i<N;++i){
-        printf("%d\n",count[i]);
+        cout<<count[i]<<'\n';
     }
     return 0;
 }
