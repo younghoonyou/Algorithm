@@ -5,27 +5,25 @@ int dp[1000001];
 int N;
 int count;
 int recur(int n){
-    if(!dp[n]){
+    if(dp[n]){
         return dp[n];
     }
     if(n==1){
-        return count;
+        return 0;
+    }
+    if(n==2||n==3){
+        return 1;
+    }
+    if(n%6==0){
+        return dp[n] = min(recur(n/3)+1,recur(n/2)+1);
     }
     if(n%3==0){
-        n/=3;
-        count++;
-        return dp[n] = recur(n);
+            return dp[n] = min(recur(n/3)+1,recur(n-1)+1);
     }
-    else if(n%2==0){
-        n/=2;
-        count++;
-        return dp[n] = recur(n);
+    if(n%2==0){
+            return dp[n] = min(recur(n/2)+1,recur(n-1)+1);
     }
-    else{
-        n-=1;
-        count++;
-        return dp[n] = recur(n);
-    }
+        return dp[n] = recur(n-1)+1;
 }
 int main(){
     cin>>N;
