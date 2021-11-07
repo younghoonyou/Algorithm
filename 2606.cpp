@@ -1,47 +1,44 @@
 #include <iostream>
+#include <algorithm>
 #include <queue>
 #include <vector>
 using namespace std;
-vector<vector<int> > arr;
-vector<int> temp;
-bool v[1001];
+vector<int> dp[101];
+bool v[101];
 void bfs(int start){
     queue<int> q;
     v[start] = true;
     q.push(start);
     while(!q.empty()){
         int x = q.front();
-        q.pop();
-        cout<<x<<' '<<endl;
-            for(int i=0;i<arr[x].size();++i){
-                int y = arr[x][i];
+        if(v[x]){
+            for(int i=0;i<dp[x].size();++i){
+                int y = dp[x][i];
                 if(!v[y]){
-                    q.push(y);
                     v[y] = true;
+                    q.push(y);
                 }
             }
-    }
+        }
+        q.pop();
+    } 
 }
 int main(){
-    int N,link;
-    int start,end;
+    int N,line;
+    int a,b,count=0;
     cin>>N;
-    for(int i=1;i<=N;++i){
-        temp.push_back(i);
+    cin>>line;
+    for(int i=0;i<line;++i){
+        cin>>a>>b;
+        dp[a].push_back(b);
+        dp[b].push_back(a);
     }
+    bfs(1);
     for(int i=1;i<=N;++i){
-        arr.push_back(temp);
+        if(!v[i]){
+            count++;
+        }
     }
-    // cin>>link;
-    cout<<arr[0][0];
-    // arr.push_back(temp);
-    // cout<<arr[1].size();
-    // for(int i=0;i<link;++i){
-    //     arr.push_back(start);
-    //     cin>>start>>end;
-        
-    //     arr[start].push_back(end);
-    // }
-    // bfs(1);
+    cout<<N-count-1;//나머지 연결 안된 부분 세기
     return 0;
 }
