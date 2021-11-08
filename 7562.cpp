@@ -30,7 +30,7 @@ void bfs(int x,int y){
             }
             if(!v[n_x][n_y]){
                 q.push(make_pair(n_x,n_y));
-                dp[n_x][n_y] = dp[cur_x][cur_y]+1;   
+                dp[n_x][n_y] = dp[cur_x][cur_y]+1;//다음 경로에 가는 최소 횟수 저장
                 v[n_x][n_y] = true;
             }
         }
@@ -40,14 +40,13 @@ int main(){
     int N;
     cin>>N;
     for(int i=0;i<N;++i){
-        int count=0;
         cin>>size;
         cin>>start_x>>start_y;
         cin>>end_x>>end_y;
         bfs(start_x,start_y);
         cout<<dp[end_x][end_y]-1<<'\n';
         memset(dp,0,sizeof(dp));
-        memset(v,0,sizeof(v));
+        memset(v,0,sizeof(v));//mem 메모리 라이브러리 사용 알아두기
     }
     return 0;
 }
