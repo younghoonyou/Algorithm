@@ -27,7 +27,7 @@ int main(){
         cin>>t;
         for(int j=0;j<t;++j){
             cin>>name>>type;
-            m[type]++;
+            m[type]++;//이렇게 추가 할  수 있다.
         }
         for(auto i:m){
         sum*=(i.second+1);
