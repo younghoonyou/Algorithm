@@ -15,22 +15,22 @@ int main(){
     for(int i=0;i<10;++i){
         if(dp[i]>temp[i]){
             a+=3;
-            last = 'A'
+            last = 'A';
         }
         else if(dp[i]<temp[i]){
             b+=3;
-            last = 'B'
+            last = 'B';
         }
         else{
-            a+=1;
-            b+=1;
+            a++;
+            b++;
         }
     }
-    cout<<a<<" "<<b<<'\n';
-        if(dp[index]>temp[index]){
+    cout<< a << " "<< b <<'\n';
+        if(a>b){
             cout<<'A';
         }
-        else if(dp[index]<temp[index]){ 
+        else if(a<b){ 
             cout<<'B';
         }
         else{
