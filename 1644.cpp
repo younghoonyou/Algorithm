@@ -40,4 +40,4 @@ int main(){
     }
     cout<<count<<'\n';
     return 0;
-}
+}//outofbounds 에러가 난 이유는 소수가 아예 없을 경우의 수를 생각하지 못해서이다.
