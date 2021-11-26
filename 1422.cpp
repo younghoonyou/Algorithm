@@ -1,15 +1,13 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
-#include <memory.h>
 using namespace std;
 typedef long long ll;
 string arr[51];
-string answer[51];
 bool cmp(string a,string b){
     if(a+b>b+a) return true;
     return false;
-}
+}//문자열 형식으로 사전 순으로 더했을 때 결과를 고려해서 나열하면 된다. ex) 9 89   89 9 전자가 더 크다
 int main(){
     int n,k;
     string answer="";
@@ -44,4 +42,4 @@ int main(){
         answer.insert(index,maxi);
     }
     cout<<answer;
-}
+}//가장 큰 수를 해당하는 곳에 잘 넣으면 된다. 핵심은 위의 정렬 key point
