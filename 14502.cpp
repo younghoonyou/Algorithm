@@ -62,4 +62,4 @@ int main(){
     wall(1);
     cout<<answer<<'\n';
     return 0;
-}
+}//천천히 temp 만들면서 빠르게 말고 바르게 생각하자
