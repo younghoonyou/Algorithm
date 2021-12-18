@@ -64,7 +64,6 @@ void attack(){//가장 가까운 적 먼저 공격, 거리가 같은 적이 많�
     }
 }
 
-
 void enemy_move(){
     for(int i=1;i<=M;++i){
         for(int j=N-1;j>=0;--j){
