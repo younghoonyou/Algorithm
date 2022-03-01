@@ -13,7 +13,6 @@ int consult(int n){
         return 0;
     }
     if(T[n]<=N-n+1){
-        dp[n] = P[n];
         return dp[n] = max(consult(n+T[n])+P[n],consult(n+1));
     }
     else{

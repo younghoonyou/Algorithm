@@ -6,11 +6,11 @@ using namespace std;
 int T,N;
 int arr[100001];
 vector<int> dp[100001];
-void recur(){
+void recur(int n){
     queue<int> q;
-    q.push();
-    while(){
-        
+    q.push(int n);
+    while(!q.empty()){
+
     }
 }
 int main(){

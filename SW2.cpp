@@ -24,20 +24,31 @@
 using namespace std;
 #include <string>
 #include <vector>
-struct Family{
-    string name;
-    int distance,gender,relation;
+class Family{
+    private:
+        string name;
+        int gender,distance,relation;
+    public:
+        Family *next = nullptr;
+        Family(string _name,int _gender){
+            name = _name;
+            gender = _gender;
+            next->next = nullptr;
+        }
+        Family(string _name,int _gender,int relation,string __name,Family *temp){
+            while(temp->next->name!=__name){
+                temp++;
+            }
+        }
 };
-vector<Family> person[200];
 void init(char initialMemberName[], int initialMemberSex)
 {
-    for(int i=0;i<200;++i) person[i].clear();
-    person[0].push_back({initialMemberName,0,initialMemberSex,-1});
+    Family(initialMemberName,initialMemberSex);
 }
 
 bool addMember(char newMemberName[], int newMemberSex, int relationship, char existingMemberName[])
 {
-    
+    Family(newMemberName,newMemberSex,relationship,existingMemberName,next);
 	return false;
 }
 

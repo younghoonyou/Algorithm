@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <deque>
+
 using namespace std;
 int N,del;
 string str;

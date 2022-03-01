@@ -75,6 +75,7 @@ void play(int direction){
         break;
     }
 }
+
 int main(){
     cin>>N>>M>>map_x>>map_y>>num;
     for(int i=0;i<N;++i){

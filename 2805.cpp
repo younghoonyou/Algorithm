@@ -18,7 +18,6 @@ int main(){
         for(auto i:temp){
             i-mid<0 ? count+=0:count+=i-mid;
         }
-        // cout<<count<<" ";
         count<m ? maxi = mid-1:start=mid+1;
     }
     cout<<maxi;

@@ -17,7 +17,7 @@ int main(){
         cin >> x >> y;
         temp[i] = make_pair(x,y);
     }
-    sort(temp.begin(),temp.end());
+    sort(temp.begin(),temp.end(),cmp);
     start = temp[0].first;
     end = temp[0].second;
     for(int i=1;i<N;++i){ 

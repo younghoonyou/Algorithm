@@ -111,7 +111,7 @@ int main()
 {
 	int TC;
 	
-    freopen("Text1.txt", "r", stdin);
+    freopen("test.txt", "r", stdin);
 
 	setbuf(stdout, NULL);
     scanf("%d", &TC);
@@ -135,12 +135,12 @@ int main()
 		
 			callcount = 0;
 			play();
-
+            // printf("TEST%d :%d %d\n",game+1,hit,callcount);
 			if (hit != 0)
-				callcount = MAX_CALLCOUNT;
+				callcount = MAX_CALLCOUNT,printf("1TEST1%d :%d %d\n",game+1,hit,callcount);;
 			
 			if (callcount > limit)
-				score = 0;
+				score = 0,printf("TEST%d :%d %d\n",game+1,hit,callcount);
 
 			callcount4tc += callcount;
 		}

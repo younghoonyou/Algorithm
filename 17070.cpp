@@ -9,6 +9,13 @@ int dy[3] = {1,1,0};//→, ↘, ↓
 void pipe(int x,int y,int num){
     if(x==N && y==N){
         cnt++;
+        cout<<'\n';
+        for(int i=1;i<=N;++i){
+            for(int j=1;j<=N;++j){
+                cout<<arr[i][j]<<" ";
+            }
+            cout<<'\n';
+        }
         return;
     }
         for(int i=0;i<3;++i){
